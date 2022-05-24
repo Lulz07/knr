@@ -1,4 +1,5 @@
-/* Exercise 1-2. (page 8)
+/*
+ * Exercise 1-2. (page 8)
  *
  * Experiment to find out what happens when printf's argument
  * string contains \c, where c is some character not listed
@@ -24,8 +25,6 @@ int main(void)
     printf("Double quote: \\\"\n");
     printf("Octal number: \\ooo\n");
     printf("Hexadecimal number: \\xhh\n");
-
     /* other than this, they invoke an undefined behaviour */
-
     return 0;
 }

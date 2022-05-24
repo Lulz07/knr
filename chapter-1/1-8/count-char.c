@@ -1,4 +1,5 @@
-/* Exercise 1-8. (page 20)
+/*
+ * Exercise 1-8. (page 20)
  *
  * Write a program to count blanks, tabs, and newlines.
  *
@@ -27,6 +28,5 @@ int main(void)
     printf("Blanks: %d\n", blanks);
     printf("Tabs: %d\n", tabs);
     printf("Newlines: %d\n", newlines);
-
     return 0;
 }

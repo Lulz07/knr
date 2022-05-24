@@ -1,4 +1,5 @@
-/* Exercise 1-4. (page 13)
+/*
+ * Exercise 1-4. (page 13)
  *
  * Write a program to print the corresponding Celsius to
  * Fahrenheit table.
@@ -31,6 +32,5 @@ int main(void)
         printf("%5.0f %19.1f\n", celsius, fahr);
         celsius = celsius + step_size;
     }
-
     return 0;
 }

@@ -1,4 +1,5 @@
-/* Exercise 1-3. (page 13)
+/*
+ * Exercise 1-3. (page 13)
  *
  * Modify the temperature conversion program to print a
  * heading above the table.
@@ -30,6 +31,5 @@ int main(void)
         printf("%7.0f %19.1f\n", fahr, celsius);
         fahr = fahr + step_size;
     }
-
     return 0;
 }
