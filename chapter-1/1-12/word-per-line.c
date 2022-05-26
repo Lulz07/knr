@@ -8,17 +8,25 @@
 
 #include <stdio.h>
 
+#define INSIDE_A_WORD 1
+#define OUTSIDE_A_WORD 0
+
 int main(void)
 {
-    int c;
+    int c, character_status;
+
+    character_status = INSIDE_A_WORD;
 
     while ((c = getchar()) != EOF) {
-        if (c == ' ' || c == '\n' || c == '\t')
-            /* outside a word */
-            printf("\n");
-        else
-            /* inside a word */
+        if (c == ' ' || c == '\n' || c == '\t') {
+            if (character_status == OUTSIDE_A_WORD) {
+                character_status = INSIDE_A_WORD;
+                printf("\n");
+            }
+        } else {
+            character_status = OUTSIDE_A_WORD;
             putchar(c);
+        }
     }
     return 0;
 }
