@@ -5,7 +5,7 @@
  * each string of one or more blanks by a single blank.
  *
  * Written by Lulz07.
-*/
+ */
 
 #include <stdio.h>
 
@@ -20,14 +20,12 @@ int main(void)
     while ((c = getchar()) != EOF) {
         if (c == ' ') {
             if (character_status == PREVIOUS_IS_NOT_A_BLANK) {
-                /* change the character status */
                 character_status = PREVIOUS_IS_A_BLANK;
                 putchar(c);
             }
         }
 
         if (c != ' ') {
-            /* reset the character status back */
             character_status = PREVIOUS_IS_NOT_A_BLANK;
             putchar(c);
         }

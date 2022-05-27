@@ -5,7 +5,7 @@
  * order, that is, from 300 degrees to 0.
  *
  * Written by Lulz07.
-*/
+ */
 
 #include <stdio.h>
 

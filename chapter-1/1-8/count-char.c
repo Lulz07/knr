@@ -4,7 +4,7 @@
  * Write a program to count blanks, tabs, and newlines.
  *
  * Written by Lulz07.
-*/
+ */
 
 #include <stdio.h>
 

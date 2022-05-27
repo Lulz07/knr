@@ -6,7 +6,7 @@
  * messages you get.
  *
  * Written by Lulz07.
-*/
+ */
 
 #include <stdio.h>
 

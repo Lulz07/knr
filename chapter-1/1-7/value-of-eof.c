@@ -4,7 +4,7 @@
  * Write a program to print the value of EOF.
  *
  * Written by Lulz07.
-*/
+ */
 
 #include <stdio.h>
 

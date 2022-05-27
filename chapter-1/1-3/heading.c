@@ -5,7 +5,7 @@
  * heading above the table.
  *
  * Written by Lulz07.
-*/
+ */
 
 #include <stdio.h>
 
@@ -24,10 +24,6 @@ int main(void)
     fahr = start_at;
     while (fahr <= stop_at) {
         celsius = (5.0 / 9.0) * (fahr - 32.0);
-        /* fahrenheit will be printed 7 characters wide
-         * meanwhile celsius is 19 characters wide and 1
-         * character after decimal point
-        */
         printf("%7.0f %19.1f\n", fahr, celsius);
         fahr = fahr + step_size;
     }

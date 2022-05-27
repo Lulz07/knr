@@ -4,7 +4,7 @@
  * Write a program that prints its input one word per line.
  *
  * Written by Lulz07.
-*/
+ */
 
 #include <stdio.h>
 
