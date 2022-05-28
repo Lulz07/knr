@@ -27,10 +27,6 @@ int main(void)
     for (i = 0; i < 11; ++i)
         histogram[i] = 0;
 
-    /*
-     * below is the program routine, it basically just an
-     * extended version of 1-12/word-per-line.c
-     */
     i = 0;
     character_status = INSIDE_A_WORD;
     while ((c = getchar()) != EOF) {
@@ -48,12 +44,10 @@ int main(void)
         }
     }
 
-    /* get the highest value inside the histogram array */
     for (i = 1; i < 11; ++i)
         if (highest_value <= histogram[i])
             highest_value = histogram[i];
 
-    /* print the histogram vertically */
     for (i = highest_value; i >= 0; --i) {
         for (y = 1; y < 11; ++y) {
             if (histogram[y] > i)
@@ -64,10 +58,6 @@ int main(void)
         printf("\n");
     }
 
-    /*
-     * print the elements inside the histogram array
-     * with the index of 0 skipped 'for a reason'
-     */
     for (y = 1; y < 11; ++y)
         printf("%d\t", histogram[y]);
     printf("\n");

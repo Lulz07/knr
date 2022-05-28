@@ -25,10 +25,6 @@ int main(void)
     for (i = 0; i < 11; ++i)
         histogram[i] = 0;
 
-    /*
-     * below is the program routine, it basically just an
-     * extended version of 1-12/word-per-line.c
-     */
     i = 0;
     character_status = INSIDE_A_WORD;
     while ((c = getchar()) != EOF) {
@@ -46,13 +42,9 @@ int main(void)
         }
     }
 
-    /*
-     * prints the histogram horizontally, but we skipped
-     * the index of 0 'for a reason'
-     */
     for (i = 1; i < 11; ++i) {
         printf("%d: ", i);
-        for (y = 0; y <= histogram[i]; ++y)
+        for (y = 1; y <= histogram[i]; ++y)
             printf("=");
         printf(" (%d)\n", histogram[i]);
     }
