@@ -16,13 +16,14 @@
 
 #define INSIDE_A_WORD 1
 #define OUTSIDE_A_WORD 0
+#define MAX_WORD_LENGTH 11
 
 int main(void)
 {
     int c, i, y, character_status;
-    int histogram[11];
+    int histogram[MAX_WORD_LENGTH];
 
-    for (i = 0; i < 11; ++i)
+    for (i = 0; i < MAX_WORD_LENGTH; ++i)
         histogram[i] = 0;
 
     i = 0;
@@ -31,7 +32,7 @@ int main(void)
         if (c == ' ' || c == '\t' || c == '\n') {
             if (character_status == OUTSIDE_A_WORD) {
                 character_status = INSIDE_A_WORD;
-                if (i < 11)
+                if (i < MAX_WORD_LENGTH)
                     /* prevents buffer overflow */
                     ++histogram[i];
                 i = 0;
@@ -42,7 +43,7 @@ int main(void)
         }
     }
 
-    for (i = 1; i < 11; ++i) {
+    for (i = 1; i < MAX_WORD_LENGTH; ++i) {
         printf("%d: ", i);
         for (y = 1; y <= histogram[i]; ++y)
             printf("=");
