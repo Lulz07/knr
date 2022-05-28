@@ -4,6 +4,9 @@
  * Write a program to print a histogram of the frequencies
  * of different characters in its input.
  *
+ * Accuracy is tested with the command:
+ * egrep -o '<char>' char-frequencies.c | wc -l
+ *
  * Written by Lulz07.
  */
 
@@ -39,25 +42,25 @@ int main(void)
     /* uppercase character histogram */
     for (i = 0; i < AMOUNT_OF_ALPHABET_CHAR; ++i) {
         printf("%c: ", i + 'A');
-        for (y = 0; y <= uppercase_histogram[i]; ++y)
+        for (y = 1; y <= uppercase_histogram[i]; ++y)
             printf("=");
-        printf("\n");
+        printf(" (%d)\n", uppercase_histogram[i]);
     }
 
     /* lowercase character histogram */
     for (i = 0; i < AMOUNT_OF_ALPHABET_CHAR; ++i) {
         printf("%c: ", i + 'a');
-        for (y = 0; y <= lowercase_histogram[i]; ++y)
+        for (y = 1; y <= lowercase_histogram[i]; ++y)
             printf("=");
-        printf("\n");
+        printf(" (%d)\n", lowercase_histogram[i]);
     }
 
     /* numeric character histogram */
     for (i = 0; i < AMOUNT_OF_NUMERIC_CHAR; ++i) {
         printf("%d: ", i);
-        for (y = 0; y <= numeric_histogram[i]; ++y)
+        for (y = 1; y <= numeric_histogram[i]; ++y)
             printf("=");
-        printf("\n");
+        printf(" (%d)\n", numeric_histogram[i]);
     }
     return 0;
 }
