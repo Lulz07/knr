@@ -52,15 +52,11 @@ int main(void)
     for (i = highest_value; i >= 0; --i) {
         for (y = 1; y < MAX_WORD_LENGTH; ++y) {
             if (histogram[y] > i)
-                printf("=\t");
+                printf("=   ");
             else
-                printf(" \t");
+                printf("    ");
         }
         printf("\n");
     }
-
-    for (y = 1; y < MAX_WORD_LENGTH; ++y)
-        printf("%d\t", histogram[y]);
-    printf("\n");
     return 0;
 }
