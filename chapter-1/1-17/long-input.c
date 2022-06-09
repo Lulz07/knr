@@ -1,6 +1,20 @@
+/*
+ * Exercise 1-17. (page 31)
+ *
+ * Write a program to print all input lines that are longer
+ * than 80 characters.
+ *
+ * Written by Lulz07.
+ */
+
 #include <stdio.h>
 
-#define MAX_CHAR 80
+/*
+ * if we defined MAX_CHAR as 80, only 79 characters will be
+ * stored rather than 80 (excluding the null character).
+ * so, lets define this as 81 instead.
+ */
+#define MAX_CHAR 81
 
 int my_getline(char [], int);
 
