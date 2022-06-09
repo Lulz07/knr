@@ -46,11 +46,10 @@ int my_getline(char string[], int max_read)
 {
     int c, i;
 
-    for (i = 0;
-            i < max_read - 1
-            && (c = getchar()) != EOF
-            && c != '\n';
-            ++i)
+    for (i = 0; i < max_read - 1
+        && (c = getchar()) != EOF
+        && c != '\n';
+        ++i)
         string[i] = c;
 
     if (c == '\n') {
