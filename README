@@ -6,8 +6,12 @@ Feel free to submit pull requests if you encounter any of these.
 
 Style guide used
 ================
-- Linux kernel coding style (but with 4 spaces for indentation instead of tabs).
-  Coding style documentation: https://www.kernel.org/doc/html/v4.10/process/coding-style.html#
+- Linux kernel coding style (but with 4 spaces for indentation and the maximum
+  limit on the length of lines is only 65 columns, so that the source code is
+  displayed nicely on mobile view (this does not applied to README file
+  anyway)).
+  Coding style documentation:
+  - https://www.kernel.org/doc/html/v4.10/process/coding-style.html#
 
 Repository status
 ==================
