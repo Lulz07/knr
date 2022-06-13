@@ -12,9 +12,10 @@
 
 #define CHAR_BUFFER 150
 
-int my_getline(char [], int);
-void copy(char [], char []);
+int my_getline(char str[], int max_read);
+void copy(char from[], char to[]);
 
+/* print the length of arbitrarily long input lines */
 int main(void)
 {
     int len;
@@ -25,7 +26,7 @@ int main(void)
     max = 0;
     while ((len = my_getline(line, CHAR_BUFFER)) > 0) {
         if (len == CHAR_BUFFER - 1
-                && line[CHAR_BUFFER - 1] != '\n') {
+            && line[CHAR_BUFFER - 1] != '\n') {
             while (getchar() != '\n')
                 ++len;
             ++len; /* include the newline */
@@ -42,25 +43,43 @@ int main(void)
     return 0;
 }
 
-int my_getline(char string[], int max_read)
+/**
+ * my_getline() -- read a line into str, return length.
+ * @str: an array of char to save into
+ * @max_read: maximum buffer to read
+ *
+ * Read a char from stdin and save them into str until a
+ * complete line is formed, then return the length.
+ *
+ * Return: The length of str.
+ */
+int my_getline(char str[], int max_read)
 {
     int c, i;
 
-    for (i = 0; i < max_read - 1
-        && (c = getchar()) != EOF
-        && c != '\n';
-        ++i)
-        string[i] = c;
+    for (i = 0; i < max_read - 1 && (c = getchar()) != EOF
+        && c != '\n'; ++i)
+        str[i] = c;
 
     if (c == '\n') {
-        string[i] = c;
+        str[i] = c;
         ++i;
     }
 
-    string[i] = '\0';
+    str[i] = '\0';
     return i;
 }
 
+/**
+ * copy() -- copy 'from' into 'to'; assume 'to' is big enough.
+ * @from: an array of char to copy from
+ * @to: an array of char to copy into, should be big enough
+ *
+ * Copy 'from' into 'to'. 'to' should have enough buffer to
+ * store the content of 'from', however, this function would
+ * assume that 'to' is big enough, so there's no length
+ * checking would be done by this function beforehand.
+ */
 void copy(char from[], char to[])
 {
     int i;

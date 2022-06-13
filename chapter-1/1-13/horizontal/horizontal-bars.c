@@ -18,20 +18,26 @@
 #define OUTSIDE_A_WORD 0
 #define MAX_WORD_LENGTH 11
 
+/*
+ * print a histogram of the lengths of words in its input;
+ * horizontally
+ */
 int main(void)
 {
     int c, i, y, character_status;
     int histogram[MAX_WORD_LENGTH];
 
+    /* set all elements to 0 */
     for (i = 0; i < MAX_WORD_LENGTH; ++i)
         histogram[i] = 0;
 
+    /* main routine */
     i = 0;
     character_status = INSIDE_A_WORD;
     while ((c = getchar()) != EOF) {
         if (c == ' ' || c == '\t' || c == '\n') {
             if (character_status == OUTSIDE_A_WORD) {
-                character_status = INSIDE_A_WORD;
+                 character_status = INSIDE_A_WORD;
                 if (i < MAX_WORD_LENGTH)
                     /* prevents buffer overflow */
                     ++histogram[i];
@@ -43,6 +49,7 @@ int main(void)
         }
     }
 
+    /* print the histogram */
     for (i = 1; i < MAX_WORD_LENGTH; ++i) {
         printf("%d: ", i);
         for (y = 1; y <= histogram[i]; ++y)

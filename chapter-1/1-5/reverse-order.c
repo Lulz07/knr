@@ -1,7 +1,7 @@
 /*
  * Exercise 1-5. (page 14)
  *
- * Modify the temprature program to print the table in reverse
+ * Modify the temperature program to print the table in reverse
  * order, that is, from 300 degrees to 0.
  *
  * Written by Lulz07.
@@ -9,6 +9,10 @@
 
 #include <stdio.h>
 
+/*
+ * print Fahrenheit-Celsius table but in reverse order;
+ * 300, 280, ..., 0
+ */
 int main(void)
 {
     int fahr;

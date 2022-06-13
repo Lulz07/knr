@@ -11,6 +11,7 @@
 #define INSIDE_A_WORD 1
 #define OUTSIDE_A_WORD 0
 
+/* print the input one word per line */
 int main(void)
 {
     int c, character_status;

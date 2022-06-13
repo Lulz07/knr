@@ -36,8 +36,7 @@ int main(void)
  * @max_read: maximum buffer to read
  *
  * Read a char from stdin and save them into str until a
- * complete line is formed. The length will be recorded as a
- * return value.
+ * complete line is formed, then return the length.
  *
  * Return: The length of str.
  */

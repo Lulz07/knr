@@ -9,26 +9,22 @@
 
 #include <stdio.h>
 
-/*
- * if we defined MAX_CHAR as 80, only 79 characters will be
- * stored rather than 80 (excluding the null character).
- * so, lets define this as 81 instead.
- */
-#define MAX_CHAR 81
+#define MAX_CHAR 80
 
-int my_getline(char [], int);
+int my_getline(char str[], int max_read);
 
+/* print all input lines that are longer than 80 characters */
 int main(void)
 {
     int c;
     int len;
-    char line[MAX_CHAR];
+    char line[MAX_CHAR + 1];
 
     len = 0;
-    while ((len = my_getline(line, MAX_CHAR)) > 0)
+    while ((len = my_getline(line, MAX_CHAR + 1)) > 0)
         if (line[len - 1] != '\n') {
+            /* line[len - 1] would return the char before \0 */
             printf("%s", line);
-            /* read the characters left one by one */
             while ((c = getchar()) != '\n')
                 putchar(c);
             printf("\n");
@@ -36,21 +32,29 @@ int main(void)
     return 0;
 }
 
-int my_getline(char string[], int max_read)
+/**
+ * my_getline() -- read a line into str, return length.
+ * @str: an array of char to save into
+ * @max_read: maximum buffer to read
+ *
+ * Read a char from stdin and save them into str until a
+ * complete line is formed, then return the length.
+ *
+ * Return: The length of str.
+ */
+int my_getline(char str[], int max_read)
 {
     int c, i;
 
-    for (i = 0; i < max_read - 1
-        && (c = getchar()) != EOF
-        && c != '\n';
-        ++i)
-        string[i] = c;
+    for (i = 0; i < max_read - 1 && (c = getchar()) != EOF
+        && c != '\n'; ++i)
+        str[i] = c;
 
     if (c == '\n') {
-        string[i] = c;
+        str[i] = c;
         ++i;
     }
 
-    string[i] = '\0';
+    str[i] = '\0';
     return i;
 }

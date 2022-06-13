@@ -15,6 +15,10 @@
 #define AMOUNT_OF_NUMERIC_CHAR 10
 #define AMOUNT_OF_ALPHABET_CHAR 26
 
+/*
+ * print a histogram of the frequencies of different
+ * characters in its input
+ */
 int main(void)
 {
     int c, i, y;
@@ -22,6 +26,7 @@ int main(void)
     int lowercase_histogram[AMOUNT_OF_ALPHABET_CHAR];
     int numeric_histogram[AMOUNT_OF_NUMERIC_CHAR];
 
+    /* set all elements to 0 */
     for (i = 0; i < AMOUNT_OF_ALPHABET_CHAR; ++i) {
         uppercase_histogram[i] = 0;
         lowercase_histogram[i] = 0;
@@ -30,6 +35,7 @@ int main(void)
     for (i = 0; i < AMOUNT_OF_NUMERIC_CHAR; ++i)
         numeric_histogram[i] = 0;
 
+    /* the main routine */
     while ((c = getchar()) != EOF) {
         if (c >= 'A' && c <= 'Z')
             ++uppercase_histogram[c - 'A'];

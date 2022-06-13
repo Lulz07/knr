@@ -12,21 +12,24 @@
 #define PREVIOUS_IS_A_BLANK 1
 #define PREVIOUS_IS_NOT_A_BLANK 0
 
+/*
+ * replace each string of one or more blanks by a single blank
+ */
 int main(void)
 {
-    int c, character_status;
+    int c, char_stats;
 
-    character_status = PREVIOUS_IS_NOT_A_BLANK;
+    char_stats = PREVIOUS_IS_NOT_A_BLANK;
     while ((c = getchar()) != EOF) {
         if (c == ' ') {
-            if (character_status == PREVIOUS_IS_NOT_A_BLANK) {
-                character_status = PREVIOUS_IS_A_BLANK;
+            if (char_stats == PREVIOUS_IS_NOT_A_BLANK) {
+                char_stats = PREVIOUS_IS_A_BLANK;
                 putchar(c);
             }
         }
 
         if (c != ' ') {
-            character_status = PREVIOUS_IS_NOT_A_BLANK;
+            char_stats = PREVIOUS_IS_NOT_A_BLANK;
             putchar(c);
         }
     }

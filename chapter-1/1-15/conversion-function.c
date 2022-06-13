@@ -13,8 +13,9 @@
 #define STOP_AT 300
 #define STEP_SIZE 20
 
-int fahr_to_celsius(int);
+int fahr_to_celsius(int fahr);
 
+/* Fahrenheit-Celsius conversion program; 0, 20, ..., 300 */
 int main(void)
 {
     int fahr;
@@ -27,6 +28,17 @@ int main(void)
     return 0;
 }
 
+/**
+ * fahr_to_celsius() -- convert 'fahr' into its equivalent
+ * Celsius value
+ * @fahr: value of Fahrenheit
+ *
+ * Convert 'fahr' into its equivalent Celsius value, using
+ * the formula:
+ *      5 * (fahr - 32) / 9
+ *
+ * Return: Equivalent Celsius value of 'fahr'
+ */
 int fahr_to_celsius(int fahr)
 {
     return 5 * (fahr - 32) / 9;

@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 
+/* print Fahrenheit-Celsius table with a heading above it */
 int main(void)
 {
     float fahr, celsius;

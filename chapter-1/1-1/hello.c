@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 
+/* print "hello, world" onto the screen */
 int main(void)
 {
     printf("hello, world\n");

@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 
+/* print all available escape sequences in the language */
 int main(void)
 {
     printf("Alert (bell) character: \\a\n");
