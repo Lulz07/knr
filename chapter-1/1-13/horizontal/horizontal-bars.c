@@ -37,7 +37,7 @@ int main(void)
     while ((c = getchar()) != EOF) {
         if (c == ' ' || c == '\t' || c == '\n') {
             if (character_status == OUTSIDE_A_WORD) {
-                 character_status = INSIDE_A_WORD;
+                character_status = INSIDE_A_WORD;
                 if (i < MAX_WORD_LENGTH)
                     /* prevents buffer overflow */
                     ++histogram[i];
