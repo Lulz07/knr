@@ -53,6 +53,7 @@ dkms.conf
 
 # CMake related
 CMakeLists.txt.user
+CMakeLists.txt
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
